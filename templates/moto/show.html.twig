@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{# {% block title %}#{{ moto.id }} {{moto.slug}}{% endblock %} #}
+{% block title %}{{ "#"~ moto.id }}{% endblock %}
+{% block body %}
+<div class = "row">
+	<div  align = "center" class= "col-md-6 mx-auto">
+		<article>
+            <h1> {{ moto.nom |title }}</h1>
+            <br>
+            <img style="max-width: 400px;" class="bd-placeholder-img" src="https://www.lerepairedesmotards.com/img/actu/2022/moto-sportive-hydrogene-h2k-avant_hd.jpg">
+            
+            <br>
+            <h5>{{ moto.marque }}</h5>
+        </article>
+      
+        {# <a class="btn btn-primary btn-sm" href={{ path('app_moto_edit', {id: moto.id}) }}>Edit moto</a>
+        
+        <a class="btn btn-secondary btn-sm" href={{ path('app_moto_index') }}>Go Back</a>
+        #}
+       
+        
+
+
+
+        <a class="btn btn-primary btn-sm" href={{ path('app_moto_edit', {id: moto.id}) }}>Edit moto</a>
+        {{ include('moto/_delete_form.html.twig') }}
+        <a class="btn btn-secondary btn-sm" href={{ path('app_moto_index') }}>Go Back</a>
+{# <p>moto créée par {{ user.firstname ~" "~ user.lastname }}</p> #}
+{# {{ dump(user) }} #}
+{# {{ dump(app.current_route) }} #}
+    </div>
+</div>
+{% endblock %}
+
+
